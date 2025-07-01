@@ -370,7 +370,7 @@
       }
     }
   }
-  &:last-child {
+  > *:last-child {
     margin-bottom: toRem(0);
   }
 }
