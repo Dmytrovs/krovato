@@ -1,8 +1,17 @@
 "use strict";
+
+// Touch Screen?
+const isTouchScreen = window.matchMedia("(any-hover:none)").matches
+
+window.addEventListener("load", windowLoaded)
+
+function windowLoaded() {
+
 const maxWidth = parseInt(document.querySelector(".menu-footer").dataset.spollersInit || 600)
 const menuFooter = document.querySelector(".menu-footer");
 let documentActions = (e) => {
   const targetElement = e.target;
+	const targetTag = targetElement.tagName;
   if (targetElement.closest(".menu-footer__title")) {
     if (window.innerWidth <= maxWidth) {
       if (!menuFooter.querySelectorAll("._slide").length) {
@@ -23,6 +32,24 @@ let documentActions = (e) => {
       }
     }
     e.preventDefault();
+  }
+
+	if (isTouchScreen) {
+    if (targetElement.closest(".lang-header")) {
+      const langHeader = targetElement.closest(".lang-header");
+      langHeader.classList.toggle("--active");
+    } else {
+      document.querySelector(".lang-header").classList.remove("--active");
+    }
+  }
+
+	if (targetElement.closest(".contacts-header")) {
+    if (targetTag !== "A") {
+      const contactsHeader = targetElement.closest(".contacts-header");
+      contactsHeader.classList.toggle("--active");
+    }
+  } else {
+    document.querySelector(".contacts-header").classList.remove("--active");
   }
 };
 
@@ -132,4 +159,6 @@ if (footerLogo) {
     matchMedia.matches ? footerContainer.insertAdjacentElement('afterbegin', footerLogo) :
     footerSocial.insertAdjacentElement('afterbegin', footerLogo)
   }
+}
+
 }
