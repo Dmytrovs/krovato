@@ -41,6 +41,10 @@ body {
 }
 .wrapper > main {
   flex-grow: 1;
+  transition: all 0.3s;
+	.catalog-open & {
+		filter: blur(toRem(2));
+	}
 }
 /* ------------------------- */
 [class*="__container"] {

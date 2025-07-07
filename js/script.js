@@ -51,6 +51,17 @@ let documentActions = (e) => {
   } else {
     document.querySelector(".contacts-header").classList.remove("--active");
   }
+
+  if (targetElement.closest(".button-catalog-header")) {
+    const itemsCatalogMenu = document.querySelector(".items-catalog-header");
+    document.documentElement.style.setProperty(
+      "--menu-catalog-top",
+      `${itemsCatalogMenu.getBoundingClientRect().top + 20}px`
+    );
+    document.documentElement.classList.toggle("catalog-open");
+  } else {
+    document.documentElement.classList.remove("catalog-open");
+  }
 };
 
 let spollersInit = (footerSpollers, isOpen) => {
