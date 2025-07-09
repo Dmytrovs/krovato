@@ -17,8 +17,7 @@
 		<header class="header">
 			<div class="header__top top-header">
 				<div class="top-header__container">
-					<div class="top-header__menu menu">
-						<nav class="menu__body">
+					<nav class="top-header__menu menu">
 							<ul class="menu__list">
 								<li class="menu__item"><a href="" class="menu__link">Про нас</a></li>
 								<li class="menu__item"><a href="" class="menu__link">Оплата</a></li>
@@ -28,7 +27,6 @@
 								<li class="menu__item"><a href="" class="menu__link">Контакти</a></li>
 							</ul>
 						</nav>
-					</div>
 					<div class="top-header__actions actions-top-header">
 						<div class="actions-top-header__social social-header">
 							<div class="social-header__label">Допомога і консультація:</div>
@@ -57,7 +55,8 @@
 			</div>
 			<div class="header__body body-header">
 				<div class="body-header__container">
-					<button type="button" class="icon-menu"><span></span></button>
+					<button type="button" class=" 
+					body-header__icon-menu icon-menu"><span></span></button>
 					<img src="img/logo-header.svg" class="body-header__logo" alt="Image">
 					<div class="body-header__catalog catalog-header">
 						<button class="catalog-header__button button-catalog-header">
@@ -482,16 +481,22 @@
 						</div>
 					</div>
 					<form action="#" class="body-header__search search-header">
-						<input minlength="3" required autocomplete="off" type="text" name="form[]" placeholder="Пошук товарів"
-							class="search-header__input">
-						<button class="search-header__button _icon-search" type="submit"></button>
+						<button type="button" class="search-header__open">
+							<span class="_icon-search"></span>
+							<span class="_icon-cross"></span>
+						</button>
+						<div class="search-header__body">
+							<input minlength="3" required autocomplete="off" type="text" name="form[]" placeholder="Пошук товарів"
+								class="search-header__input">
+							<button class="search-header__button _icon-search" type="submit"></button>
+						</div>
 					</form>
 					<div class="body-header__contacts contacts-header">
 						<div class="contacts-header__current current-contacts-header ">
 							<button class="current-contacts-header__phone-icon _icon-phone"></button>
 							<div class="current-contacts-header__body">
 								<span class="current-contacts-header__schedule">Щодня з 9:00 до 18:00</span>
-								<a href="tel:0679294545" class="current-contacts-header__phone">067 929-45-45</a>
+								<a href="tel:0679294545" class="current-contacts-header__phone _icon-phone">067 929-45-45</a>
 							</div>
 							<button class="current-contacts-header__arrow">
 								<span class="_icon-arrow-down"></span>
@@ -518,6 +523,7 @@
 			</div>
 			<div class="header__bottom bottom-header">
 				<div class="bottom-header__container">
+					<div class="bottom-header__menus">
 					<ul class="bottom-header__list">
 						<li class="bottom-header__item">
 							<a href="#" class="bottom-header__link _icon-menu-star">Акції</a>
@@ -538,6 +544,7 @@
 						<li class="bottom-header__item"><a href="#" class="bottom-header__link">Вітальня</a></li>
 						<li class="bottom-header__item"><a href="#" class="bottom-header__link">Офіс</a></li>
 					</ul>
+				</div>
 				</div>
 			</div>
 		</header>
