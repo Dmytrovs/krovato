@@ -1,0 +1,179 @@
+.page {
+	> * {
+		margin-bottom: toRem(70);
+		@media (max-width: toEm(991.98)) {
+			margin-bottom: toRem(40);
+		}
+		@media (max-width: toEm(479.98)) {
+			margin-bottom: toRem(30);
+		}
+	}
+}
+
+//========================================================================================================================================================
+.hero {
+	padding-block-start: toRem(30);
+	// .hero__container
+	&__container {
+		position: relative;
+	}
+	// .hero__swiper
+	&__swiper {
+		border-radius: toRem(8);
+	}
+	// .hero__swiper-wrapper
+	&__swiper-wrapper {
+	}
+	// .hero__swiper-slide
+	&__swiper-slide {
+	}
+	&__image {
+		inline-size: 100%;
+		min-width: toRem(600);
+	}
+	// .hero__link
+	&__link {
+	}
+	// .hero__swiper-pagination
+	&__swiper-pagination {
+		position: absolute;
+		inset-inline-start: 0;
+		inline-size: 100%;
+		z-index: 2;
+		display: flex;
+		gap: toRem(10);
+		justify-content: center;
+		.swiper-pagination-bullet {
+			inline-size: toRem(15);
+			block-size: toRem(15);
+			border: toRem(3) solid #fff;
+			flex-shrink: 0;
+			border-radius: 50%;
+			background-color: #fff;
+			transition: background-color 0.3s;
+		}
+		.swiper-pagination-bullet-active {
+			background-color: $yellowColor;
+		}
+	}
+	// .hero__swiper-button
+	&__swiper-button {
+		position: absolute;
+		z-index: 2;
+		inset-block-start: 50%;
+		transform: translate(0, -50%);
+		block-size: toRem(60);
+		inline-size: toRem(60);
+		border-radius: 50%;
+		background-color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: $yellowColor;
+		font-size: toRem(20);
+		transition: all 0.3s;
+		@media (max-width: toEm(991.98)) {
+			block-size: toRem(40);
+			inline-size: toRem(40);
+			font-size: toRem(16);
+		}
+		// .hero__swiper-button--prev
+		&--prev {
+			inset-inline-start: toRem(20);
+			@media (max-width: toEm(991.98)) {
+				inset-inline-start: toRem(5);
+			}
+		}
+		// .hero__swiper-button--next
+		&--next {
+			inset-inline-end: toRem(20);
+			&::before {
+				transform: rotate(-180deg);
+			}
+			@media (max-width: toEm(991.98)) {
+				inset-inline-end: toRem(5);
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $yellowColor;
+				color: #fff;
+			}
+		}
+	}
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+	bottom: toRem(20);
+	top: auto;
+	@media (max-width: toEm(991.98)) {
+		bottom: toRem(15);
+	}
+}
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+	margin: 0;
+	opacity: 1;
+}
+
+//========================================================================================================================================================
+.popular-categories {
+	// .popular-categories__container
+	&__container {
+	}
+	// .popular-categories__block-header
+	&__block-header {
+	}
+	// .popular-categories__items
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(toRem(250), 1fr));
+		column-gap: toRem(10);
+		row-gap: toRem(24);
+	}
+}
+//========================================================================================================================================================
+.popular-products {
+	// .popular-products__container
+	&__container {
+	}
+	// .popular-products__block-header
+	&__block-header {
+	}
+	// .popular-products__items
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(toRem(300), 1fr));
+		gap: toRem(30);
+		row-gap: toRem(30);
+	}
+}
+//========================================================================================================================================================
+.sale {
+	// .sale__container
+	&__container {
+	}
+	// .sale__block-header
+	&__block-header {
+	}
+	// .sale__slider
+	&__slider {
+		@media (max-width: toEm(470)) {
+			margin-inline-end: toRem(-15);
+		}
+	}
+	// .sale__swiper-wrapper
+	&__swiper-wrapper {
+	}
+	// .sale__swiper-slide
+	&__swiper-slide {
+	}
+	&__image {
+		border-radius: toRem(8);
+		block-size: 100%;
+		inline-size: 100%;
+		object-fit: cover;
+		aspect-ratio: 410 / 280;
+	}
+}
