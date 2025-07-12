@@ -257,15 +257,12 @@ function windowLoaded() {
 		})
 		function moveblockArrowsElements() {
 			blockArrows.forEach(blockArrow => {
-				const newPalce = blockArrow.closest('[class*="__container"]')
-				const oldPlace = blockArrow.closest('.block-header')
-				matchMedia.matches ? newPalce.insertAdjacentElement("beforeend", blockArrow) : oldPlace.insertAdjacentElement("beforeend", oldPlace)
+				const newPalce = blockArrow.closest('[class*="__container"], [class*="__content"]')
+				const oldPlace = newPalce.querySelector('.block-header')
+				matchMedia.matches ? newPalce.insertAdjacentElement("beforeend", blockArrow) : oldPlace.insertAdjacentElement("beforeend", blockArrow)
 			});
 		}
-
-
 	}
-
 
 	// Hero Slider
 	const swiperHero = new Swiper('.hero__swiper', {
@@ -285,7 +282,6 @@ function windowLoaded() {
 			prevEl: '.hero__swiper-button--prev',
 		}
 	});
-
 	// Sale Slider
 	const swiperSale = new Swiper('.sale__slider', {
 		// Optional parameters
@@ -310,6 +306,76 @@ function windowLoaded() {
 			},
 			// when window width is >= 640px
 			800: {
+				slidesPerView: 3,
+				spaceBetween: 30
+			}
+		}
+	});
+	// Reviews Slider
+	const swiperReviews = new Swiper('.reviews__slider', {
+		// Optional parameters
+		// loop: true,
+		slidesPerView: "auto",
+		spaceBetween: 30,
+		// freeMode: true,
+		scrollbar: {
+			el: ".reviews__scroll",
+			dragClass: "reviews__drag-scroll",
+			hide: false,
+			dragSize: 50,
+			draggable: true
+		},
+		// Navigation arrows
+		/*
+		navigation: {
+			nextEl: '.block-header__arrow--sale-right',
+			prevEl: '.block-header__arrow--sale-left',
+		},
+		*/
+		breakpoints: {
+			// when window width is >= 320px
+			320: {
+				slidesPerView: 1,
+				spaceBetween: 15
+			},
+			460: {
+				slidesPerView: 1.2,
+				spaceBetween: 30
+			},
+			950: {
+				slidesPerView: 2.2,
+				spaceBetween: 20
+			},
+			1050: {
+				slidesPerView: "auto",
+				spaceBetween: 30,
+			}
+		}
+	});
+	// New Articles Slider
+	const swiperNewArticles = new Swiper('.new-articles__slider', {
+		// Optional parameters
+		loop: true,
+		slidesPerView: 3,
+		spaceBetween: 30,
+		// Navigation arrows
+		navigation: {
+			nextEl: '.block-header__arrow--new-articles-right',
+			prevEl: '.block-header__arrow--new-articles-left',
+		},
+		breakpoints: {
+			// when window width is >= 320px
+			320: {
+				slidesPerView: 1.1,
+				spaceBetween: 10
+			},
+			// when window width is >= 480px
+			650: {
+				slidesPerView: 2,
+				spaceBetween: 20
+			},
+			// when window width is >= 640px
+			992: {
 				slidesPerView: 3,
 				spaceBetween: 30
 			}
